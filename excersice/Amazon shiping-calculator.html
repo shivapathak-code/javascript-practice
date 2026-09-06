@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    .cost-style{
+      font-size: 15px;
+      padding: 10px;
+      border-width: 1px;
+      border-style: solid;
+    }
+    .btn{
+      background-color: green;
+      color:white;
+      padding: 11px 15px;
+      border: none;
+      font-size:15px;
+    }
+  </style>
+</head>
+<body>
+  <p>Amazon Shiping Calculator</p>
+  <input placeholder="Cost of Order" class = "input-html cost-style" 
+  onkeydown="handlecostkewdown();">
+  <button
+  onclick = "
+  caculatetotal();" class = "btn">Calculate</button>
+  <p class = "result-html"></p>
+  <script>
+    function handlecostkewdown()
+    {
+                if(event.key === 'Enter')
+                    {
+                      caculatetotal();
+                    }
+    }
+      function caculatetotal()
+      {
+        const answer = document.querySelector('.input-html');
+        let cost = Number(answer.value);
+      if(cost < 40)
+      {
+          cost = cost+10;
+      }
+      else
+      {
+        cost = cost+0;
+      }
+        document.querySelector('.result-html').innerHTML = `$${cost}`;
+      }
+  </script>
+</body>
+</html>

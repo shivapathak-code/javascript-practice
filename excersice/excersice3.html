@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>excersice</title>
+</head>
+<body>
+  <script>
+    // function convertTemprature(degrees , unit)
+    // {
+    //   if(unit === 'F')
+    // {
+    //     let result1 = (degrees-32)*5/9;
+    //     console.log(result1+'C');
+    // }
+    // else{
+    //   let result2 = (degrees*9/5)+32;
+    //   console.log(result2+'F');
+    // }
+        
+    // }
+    // convertTemprature(86 , 'F');
+
+    function convertLength(length , from ,to)
+    {
+      if(from === 'miles' && to === 'km')
+    {
+      console.log(length*1.6+' km');
+    }
+    else if(from === 'km' && to === 'miles')
+    {
+        console.log(length/1.6 +' miles');
+    }
+    else if(from === 'miles' && to === 'fit')
+    {
+        console.log(length*5280+ ' fit');
+    }
+    else if(from === 'km' && to === 'fit')
+    {
+        console.log(length*3281+ ' fit');
+    }
+    else{
+      if(from === 'km' && to === 'km')
+    {
+      console.log(length+' km');
+    }
+    else
+    {
+      console.log(length+' miles');
+    }
+    }
+  
+    }
+    convertLength(5 , 'km' , 'fit');
+    
+  </script>
+</body>
+</html>

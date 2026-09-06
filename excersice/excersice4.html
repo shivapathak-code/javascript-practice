@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>excersice</title>
+  <style>
+    .is-toggled{
+      background-color: black;
+      color: white;
+      border:none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .on
+    {
+      background-color: grey;
+      color:black
+    }
+  </style>
+</head>
+<body>
+  <!-- <button onclick = "check();"class = "js-button">Test</button>
+  <script>
+      function check()
+      {
+         const button = document.querySelector('.js-button');
+        console.log(button.innerText);
+      console.log(button.classList.contains('js-button'))
+      }
+  </script> -->
+
+  <button onclick = "clickthe(this); " class = "is-toggled">Gaming</button>
+  <button onclick = "clickthe(this); " class = "is-toggled">Music</button>
+  <button onclick = "clickthe(this); " class = "is-toggled">Tech</button>
+  <script>
+    let activeButton;
+
+function clickthe(button) {
+
+    if (activeButton) {
+        activeButton.classList.remove('on');
+    }
+
+    button.classList.add('on');
+
+    activeButton = button;
+}
+
+    
+  </script>
+</body>
+</html>

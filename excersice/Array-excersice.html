@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo Project </title>
+  <style>
+    body{
+      font-family:Arial;
+    }
+    .to-do-grid,
+    .to-do-work{
+      display: grid;
+      grid-template-columns: 200px 150px 100px;
+      column-gap: 10px;
+      row-gap: 10px;
+
+    }
+     .to-do-work{
+      /* display: grid;
+      grid-template-columns: 200px 150px 100px;
+      column-gap: 10px;
+      row-gap: 10px; */
+      margin-bottom: 10px;
+    } 
+  </style>
+</head>
+<body>
+  <p>ToDo List</p>
+  <div class = "to-do-work">
+    <input placeholder="Enter todo" class = "to-do-js">
+    <input type = "date" class = "input-todo-js">
+    <button onclick="
+      addList();
+      ">Add</button>
+  </div>
+  
+  <div class = "div-html to-do-grid">
+
+  </div>
+  <script src = "script/To-do.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables</title>
+</head>
+<body>
+  <h1>Here is simple cart logic</h1>
+    <button onclick = " document.querySelector('.p-text').innerHTML = ` Cart Quantity: ${Quantity}`;">Show Quantity</button>
+    <button onclick = "Quantity = Quantity + 1;document.querySelector('.p-text').innerHTML = `Cart Quantity: ${Quantity}`">Add to Cart</button>
+    <button onclick = "Quantity = Quantity+2;document.querySelector('.p-text').innerHTML = `Cart Quantity: ${Quantity}`">+2</button>
+    <button onclick = "Quantity = Quantity+3;document.querySelector('.p-text').innerHTML = `Cart Quantity: ${Quantity}`">+3</button>
+    <button onclick = "Quantity = 0;document.querySelector('.p-text').innerHTML = `Cart Quantity: ${Quantity}`">Reset Quantity</button>
+    <p class = "p-text"></p>
+    <script>
+      let Quantity = 0;
+    </script>
+</body>
+</html>
