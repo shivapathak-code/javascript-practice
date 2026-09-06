@@ -2,17 +2,16 @@ const ToDoList = [];
 function renderTodo()
 {
 let ToDoListHTML = '';
-for(let i = 0;i<ToDoList.length;i++)
+ToDoList.forEach(function(todoobject ,index)
 {
-  const todoobject = ToDoList[i];
   const {name , dueDate} = todoobject
   const HTML = `
   <div>${name}</div>
   <div>${dueDate}</div>
-  <button onclick = "ToDoList.splice(${i} , 1);renderTodo();" class = "delete-btn";>Delete</button>
+  <button onclick = "ToDoList.splice(${index} , 1);renderTodo();" class = "delete-btn";>Delete</button>
   `;
   ToDoListHTML+=HTML;
-}
+})
 document.querySelector('.div-html').innerHTML = ToDoListHTML;
 }
 
