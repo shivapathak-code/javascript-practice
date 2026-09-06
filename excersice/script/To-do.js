@@ -1,4 +1,4 @@
-const ToDoList = [{name:'' , dueDate:''}];
+const ToDoList = [];
 function renderTodo()
 {
 let ToDoListHTML = '';
@@ -9,7 +9,7 @@ for(let i = 0;i<ToDoList.length;i++)
   const HTML = `
   <div>${name}</div>
   <div>${dueDate}</div>
-  <button onclick = "ToDoList.splice(${i} , 1);renderTodo();">Delete</button>
+  <button onclick = "ToDoList.splice(${i} , 1);renderTodo();" class = "delete-btn";>Delete</button>
   `;
   ToDoListHTML+=HTML;
 }

@@ -14,6 +14,7 @@
       grid-template-columns: 200px 150px 100px;
       column-gap: 10px;
       row-gap: 10px;
+      align-items: center;
 
     }
      .to-do-work{
@@ -22,17 +23,42 @@
       column-gap: 10px;
       row-gap: 10px; */
       margin-bottom: 10px;
+      align-items: stretch;
     } 
+    .for-style-todo,
+    .for-style-date
+    {
+      font-size: 14px;
+      padding: 8px;
+    }
+    .todo-add-btn
+    {
+      background-color: green;
+      color: white;
+      border:none;
+      font-size:15px;
+      cursor: pointer;
+    }
+    .delete-btn
+    {
+      background-color: darkred;
+      color: white;
+      border:none;
+      font-size:15px;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 8px;
+    }
   </style>
 </head>
 <body>
   <p>ToDo List</p>
   <div class = "to-do-work">
-    <input placeholder="Enter todo" class = "to-do-js">
-    <input type = "date" class = "input-todo-js">
+    <input placeholder="Enter todo" class = "to-do-js for-style-todo">
+    <input type = "date" class = "input-todo-js for-style-date">
     <button onclick="
       addList();
-      ">Add</button>
+      " class = "todo-add-btn">Add</button>
   </div>
   
   <div class = "div-html to-do-grid">
