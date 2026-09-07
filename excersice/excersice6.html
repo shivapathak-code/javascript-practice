@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title class = "title-dom">App</title>
+</head>
+<body>
+  <button onclick = "changeText();" class = "btn-dom">Start</button>
+
+  <button onclick = "addToCart();"class = "btn-cart">Add to Cart</button>
+  <p class = "p-dom"></p>
+  <br>
+  <br>
+  <button onclick = "count+=1;">Add</button>
+  <button onclick ="count-=1;">Remove</button>
+  <script>
+    let count = 0;
+    setInterval(function(){
+    
+      
+
+        if(count === 0)
+        {
+          document.querySelector('.title-dom').innerHTML = 'mar jao';
+        }
+        else if(`${count}` === '1')    // use like this;
+        {
+          document.querySelector('.title-dom').innerHTML = 'hello';
+        }
+        else if(count === 2)   // and also use like this;
+        {
+          document.querySelector('.title-dom').innerHTML = 'shiva';
+        }
+        else if(count === 3)
+        {
+          document.querySelector('.title-dom').innerHTML = 'kaise ho tum';
+        }
+        else if(count === 4)
+        {
+          document.querySelector('.title-dom').innerHTML = 'main badiya hu';
+        }
+        else if(count === 5)
+        {
+          document.querySelector('.title-dom').innerHTML = 'tum kaisi ho';
+        }
+        else if(count === 6)
+        {
+          document.querySelector('.title-dom').innerHTML = 'main bi acchi hu';
+        }
+        else if(count === 7)
+        {
+          document.querySelector('.title-dom').innerHTML = 'ok';
+        }
+        else
+        {
+          document.querySelector('.title-dom').innerHTML = `(${count}) `+'Byee';
+        }
+          count++;
+      
+        
+            
+    },1000);
+
+    function changeText()
+    {
+
+     const ans = document.querySelector('.btn-dom').innerHTML
+     if(ans === 'Start')
+     {
+      setTimeout(function(){
+        document.querySelector('.btn-dom').innerHTML = 'Finished!';
+      } , 1000);
+      document.querySelector('.btn-dom').innerHTML = 'Loading...';
+     }
+     else
+     {
+      document.querySelector('.btn-dom').innerHTML = 'Start';
+     }
+    }
+    let timer;
+    function addToCart()
+     {
+       const ans = document.querySelector('.btn-cart').innerHTML;
+       document.querySelector('.p-dom').innerHTML = `${ans}`;
+       clearTimeout(timer);
+        timer = setTimeout(function(){
+        document.querySelector('.p-dom').innerHTML = ``;
+       },2000);
+
+     }
+
+     
+  
+
+
+    // const add = function()
+    // {
+    //   console.log(2+3);
+    // }
+    // add();
+    // add();
+    // function addtwice(param)
+    // {
+    //   param();
+    // }
+    // addtwice( function()
+    // {
+    //   console.log(2+3);
+    //   console.log(2+3);
+    // });
+  </script>
+</body>
+</html>
