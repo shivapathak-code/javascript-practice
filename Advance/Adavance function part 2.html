@@ -33,6 +33,25 @@
   //   answer(4);
   //   const ans = () => 3+3;
   //   console.log(ans());
+      // const answer = [1 , -2 , 3].filter((value , index)=>
+      // {
+      //     return (value>=0);
+      // })
+      // console.log(answer);
+
+      console.log([1,2,3].map(value => value*2));
+     let arr = ['apple', 'egg', 'mango'];
+
+function removeEgg(arr) {
+    return arr.filter((value, index) => {
+        return value != 'egg';
+    });
+}
+
+arr = removeEgg(arr);
+
+console.log(arr); // ['apple', 'mango']
+
   </script>
 </body>
 </html>
