@@ -42,15 +42,15 @@
 
   <p class="title">Stone Paper Scissors</p>
 
-  <button class="btn-move" onclick="Game('Stone');">
+  <button class="btn-move button-Stone-dom">
     <img src="photos/stone-emoji.png" class="move-icon">
   </button>
 
-  <button class="btn-move" onclick="Game('Paper');">
+  <button class="btn-move button-Paper-dom">
     <img src="photos/paper-emoji.png" class="move-icon">
   </button>
 
-  <button class="btn-move" onclick="Game('Scissors');">
+  <button class="btn-move button-Scissors-dom">
     <img src="photos/scissors-emoji.png" class="move-icon">
   </button>
 
@@ -119,6 +119,34 @@
 
     }
   }
+      document.querySelector('.button-Stone-dom')
+      .addEventListener('click' ,() => {
+          Game('Stone');
+      });
+
+      document.querySelector('.button-Paper-dom')
+      .addEventListener('click' ,() => {
+          Game('Paper');
+      });
+
+      document.querySelector('.button-Scissors-dom')
+      .addEventListener('click' ,() => {
+          Game('Scissors');
+      });
+      document.body.addEventListener('keydown', (event)=>{
+          if(event.key === 'r')
+          {
+            Game('Stone');
+          }
+          else if(event.key === 'p')
+          {
+            Game('Paper');
+          }
+          else if(event.key === 's')
+          {
+            Game('Scissors');
+          }
+      });
 
     function Game(userChoice) {
 
