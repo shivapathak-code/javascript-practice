@@ -1,19 +1,65 @@
 // that is syncronous js
+// function checkInventory()
+// {
+//   console.log('checking the inventory ...');
+// }
+// function CreateOrder()
+// {
+//   console.log('creating an order ...');
+// }
+// function chargePayment()
+// {
+//   console.log('charging the payment ...');
+// }
+// function sendInvoice()
+// {
+//   console.log('send invoice ...');
+// }
+// function main()
+// {
+//   checkInventory();
+//   CreateOrder();
+//   chargePayment();
+//   sendInvoice();
+//  console.log("other process is working");
+// }
+// main();
+
+// Asycrounous javascript
 function checkInventory()
 {
-  console.log('checking the inventory ...');
+  setTimeout(()=>
+  {
+      console.log('checking the inventory ...');
+  } , 2000);
+  
 }
 function CreateOrder()
 {
-  console.log('creating an order ...');
+  setTimeout(()=>
+  {
+      console.log('creating an order ...');
+      
+  } , 1000);
+  
 }
 function chargePayment()
 {
-  console.log('charging the payment ...');
+  setTimeout(()=>
+  {
+      console.log('charging the payment ...');
+
+  } , 2000);
+  
 }
 function sendInvoice()
 {
-  console.log('send invoice ...');
+   setTimeout(()=>
+  {
+      console.log('send invoice ...');
+
+  } , 1000);
+  
 }
 function main()
 {
