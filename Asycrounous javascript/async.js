@@ -26,47 +26,75 @@
 // main();
 
 // Asycrounous javascript
-function checkInventory()
+function checkInventory(callback)
 {
   setTimeout(()=>
   {
       console.log('checking the inventory ...');
+      callback();
   } , 2000);
   
+  
 }
-function CreateOrder()
+function CreateOrder(callback)
 {
   setTimeout(()=>
   {
       console.log('creating an order ...');
-      
+      const error = new Error('order creation error');
+      callback(error);
   } , 1000);
   
 }
-function chargePayment()
+function chargePayment(callback)
 {
   setTimeout(()=>
   {
       console.log('charging the payment ...');
-
+      const error = null;
+      const chargePayment = 300;
+      callback(error , chargePayment);
   } , 2000);
   
 }
-function sendInvoice()
+function sendInvoice(callback)
 {
    setTimeout(()=>
   {
       console.log('send invoice ...');
-
+      callback();
   } , 1000);
   
 }
 function main()
 {
-  checkInventory();
-  CreateOrder();
-  chargePayment();
-  sendInvoice();
+  checkInventory(()=>
+  {
+    CreateOrder((error)=>
+    {
+      if(error)
+      {
+        console.log(error);
+      }
+      chargePayment((err , chargePayment)=>
+      {
+        if(err)
+        {
+          console.log(err);
+          return;
+        }
+        console.log(chargePayment);
+
+        sendInvoice(()=>
+        {
+          console.log("All Done!");
+        });
+      });
+    });
+  });
+  // CreateOrder();
+  // chargePayment();
+  // sendInvoice();
  console.log("other process is working");
 }
 main();
