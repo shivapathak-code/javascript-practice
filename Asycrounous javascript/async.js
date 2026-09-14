@@ -25,73 +25,184 @@
 // }
 // main();
 
+
 // Asycrounous javascript
-function checkInventory(callback)
+// function checkInventory(callback)
+// {
+//   setTimeout(()=>
+//   {
+//       console.log('checking the inventory ...');
+//       callback();
+//   } , 2000);
+  
+  
+// }
+// function CreateOrder(callback)
+// {
+//   setTimeout(()=>
+//   {
+//       console.log('creating an order ...');
+//       const error = new Error('order creation error');
+//       callback(error);
+//   } , 1000);
+  
+// }
+// function chargePayment(callback)
+// {
+//   setTimeout(()=>
+//   {
+//       console.log('charging the payment ...');
+//       const error = null;
+//       const chargePayment = 300;
+//       callback(error , chargePayment);
+//   } , 2000);
+  
+// }
+// function sendInvoice(callback)
+// {
+//    setTimeout(()=>
+//   {
+//       console.log('send invoice ...');
+//       callback();
+//   } , 1000);
+  
+// }
+// function main()
+// {
+//   checkInventory(()=>
+//   {
+//     CreateOrder((error)=>
+//     {
+//       if(error)
+//       {
+//         console.log(error);
+//       }
+//       chargePayment((err , chargePayment)=>
+//       {
+//         if(err)
+//         {
+//           console.log(err);
+//           return;
+//         }
+//         console.log(chargePayment);
+
+//         sendInvoice(()=>
+//         {
+//           console.log("All Done!");
+//         });
+//       });
+//     });
+//   });
+//   // CreateOrder();
+//   // chargePayment();
+//   // sendInvoice();
+//  console.log("other process is working");
+// }
+// main();
+
+// with promises;
+
+function checkInventory()
 {
-  setTimeout(()=>
+  return new Promise((resolve , reject) =>
+  {
+    setTimeout(()=>
   {
       console.log('checking the inventory ...');
-      callback();
+    // reject(new Error('checkInventory issu'));
+    resolve();
+     
   } , 2000);
+
+  });
+  
   
   
 }
-function CreateOrder(callback)
+function CreateOrder()
 {
-  setTimeout(()=>
+  return new Promise((resolve , reject)=>
+  {
+
+    setTimeout(()=>
   {
       console.log('creating an order ...');
-      const error = new Error('order creation error');
-      callback(error);
+      resolve();
   } , 1000);
+
+
+  });
+  
   
 }
-function chargePayment(callback)
+function chargePayment()
 {
-  setTimeout(()=>
+  return new Promise((resolve , reject)=>
+  {
+      setTimeout(()=>
   {
       console.log('charging the payment ...');
-      const error = null;
-      const chargePayment = 300;
-      callback(error , chargePayment);
+      resolve();
+
   } , 2000);
+  });
+  
   
 }
-function sendInvoice(callback)
+function sendInvoice()
 {
-   setTimeout(()=>
+  return new Promise((resolve , reject)=>
+  {
+      setTimeout(()=>
   {
       console.log('send invoice ...');
-      callback();
+      resolve();
   } , 1000);
+
+  });
+   
   
 }
-function main()
+ async function main()
 {
-  checkInventory(()=>
-  {
-    CreateOrder((error)=>
-    {
-      if(error)
-      {
-        console.log(error);
-      }
-      chargePayment((err , chargePayment)=>
-      {
-        if(err)
-        {
-          console.log(err);
-          return;
-        }
-        console.log(chargePayment);
+ await checkInventory();
+ await CreateOrder();
+ await chargePayment();
+ await sendInvoice();
 
-        sendInvoice(()=>
-        {
-          console.log("All Done!");
-        });
-      });
-    });
-  });
+
+  // checkInventory()
+  // .catch((err)=>
+  // {
+  //   console.log('error' , err);
+  // })
+  // .then(CreateOrder)
+  // .then(chargePayment)
+  // .then(sendInvoice);
+  // checkInventory(()=>
+  // {
+  //   CreateOrder((error)=>
+  //   {
+  //     if(error)
+  //     {
+  //       console.log(error);
+  //     }
+  //     chargePayment((err , chargePayment)=>
+  //     {
+  //       if(err)
+  //       {
+  //         console.log(err);
+  //         return;
+  //       }
+  //       console.log(chargePayment);
+
+  //       sendInvoice(()=>
+  //       {
+  //         console.log("All Done!");
+  //       });
+  //     });
+  //   });
+  // });
   // CreateOrder();
   // chargePayment();
   // sendInvoice();

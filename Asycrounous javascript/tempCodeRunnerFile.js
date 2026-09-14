@@ -1,3 +1,3 @@
-CreateOrder();
-  // chargePayment();
-  // sendInvoice();
+.catch((err)=>
+  {
+    c
