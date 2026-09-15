@@ -163,12 +163,30 @@ function sendInvoice()
    
   
 }
+function Done()
+{
+  return new Promise((resolve , reject) =>
+  {
+    setTimeout(()=>
+  {
+      console.log('your work is done  ...');
+    
+    resolve();
+     
+  } , 2000);
+
+  });
+  
+  
+  
+}
  async function main()
 {
  await checkInventory();
  await CreateOrder();
  await chargePayment();
  await sendInvoice();
+ await Done();
 
 
   // checkInventory()
